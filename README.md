@@ -5,7 +5,7 @@
 
 [cite_start]While most conventional detectors operate in the spatial domain and rely on pixel-level artifacts, this project explores a frequency-domain approach[cite: 3]. [cite_start]By leveraging log-magnitude Fast Fourier Transform (FFT) spectra, the model achieves high accuracy and near-real-time inference speeds, making it highly viable for rapid triage of suspicious content[cite: 4, 10].
 
-You can read the full methodology, detailed mathematical formulations, and view the training graphs in the included `Capstone Project Report.pdf`.
+You can read the full methodology, detailed mathematical formulations, and view the training graphs in the included [Capstone Project Report](capstone-project-report.pdf).
 
 ## Architecture & Pipeline
 [cite_start]The project evaluates a three-stage progression of models[cite: 4]:
@@ -19,7 +19,7 @@ You can read the full methodology, detailed mathematical formulations, and view 
 ### Frequency Domain Representation (FFT)
 [cite_start]Instead of analyzing pixel-level artifacts, the frames are converted into log-magnitude FFT spectra before classification[cite: 192, 194]:
 
-![RGB vs FFT Representation](assets/fft_spectra.png)
+![RGB vs FFT Representation](assets/spectra_comparison.png)
 
 ---
 
