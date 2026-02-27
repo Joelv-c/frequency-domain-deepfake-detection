@@ -1,0 +1,20 @@
+# Python and environments
+__pycache__/
+*.py[cod]
+*venv/
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data & Model Weights (CRITICAL: Keeps your repo from freezing)
+videos/Real_videos/*
+!videos/Real_videos/.gitkeep
+videos/Deepfakes_videos/*
+!videos/Deepfakes_videos/.gitkeep
+*.pth
+*.pt
+
+# OS generated files
+.DS_Store
+Thumbs.db
