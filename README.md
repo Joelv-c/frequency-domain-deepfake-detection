@@ -1,30 +1,30 @@
 # Frequency-Domain Deepfake Video Detection
 
 ## Overview
-[cite_start]This repository contains the code and research for a deepfake video detection pipeline explicitly optimized for low-latency forensic triage[cite: 3]. 
+This repository contains the code and research for a deepfake video detection pipeline explicitly optimized for low-latency forensic triage. 
 
-[cite_start]While most conventional detectors operate in the spatial domain and rely on pixel-level artifacts, this project explores a frequency-domain approach[cite: 3]. [cite_start]By leveraging log-magnitude Fast Fourier Transform (FFT) spectra, the model achieves high accuracy and near-real-time inference speeds, making it highly viable for rapid triage of suspicious content[cite: 4, 10].
+While most conventional detectors operate in the spatial domain and rely on pixel-level artifacts, this project explores a frequency-domain approach. By leveraging log-magnitude Fast Fourier Transform (FFT) spectra, the model achieves high accuracy and near-real-time inference speeds, making it highly viable for rapid triage of suspicious content.
 
 You can read the full methodology, detailed mathematical formulations, and view the training graphs in the included [Capstone Project Report](capstone-project-report.pdf).
 
 ## Architecture & Pipeline
-[cite_start]The project evaluates a three-stage progression of models[cite: 4]:
+The project evaluates a three-stage progression of models:
 
 ![Deepfake Detection Pipeline](assets/pipeline.png)
 
-1. [cite_start]**Baseline 3D CNN:** Trained on short RGB video clips to capture spatial-temporal features[cite: 4, 183].
-2. [cite_start]**Intermediate ResNet50:** Leverages transfer learning applied to log-magnitude FFT spectra[cite: 4, 213].
-3. [cite_start]**Fine-Tuned ResNet50:** The final model, with the top convolutional block fine-tuned specifically for frequency-domain features[cite: 4, 223].
+1. **Baseline 3D CNN:** Trained on short RGB video clips to capture spatial-temporal features.
+2. **Intermediate ResNet50:** Leverages transfer learning applied to log-magnitude FFT spectra.
+3. **Fine-Tuned ResNet50:** The final model, with the top convolutional block fine-tuned specifically for frequency-domain features.
 
 ### Frequency Domain Representation (FFT)
-[cite_start]Instead of analyzing pixel-level artifacts, the frames are converted into log-magnitude FFT spectra before classification[cite: 192, 194]:
+Instead of analyzing pixel-level artifacts, the frames are converted into log-magnitude FFT spectra before classification:
 
 ![RGB vs FFT Representation](assets/spectra_comparison.png)
 
 ---
 
 ## Performance & Results
-[cite_start]The shift from the spatial domain to the frequency domain yielded significant performance improvements across six independent runs[cite: 93]. 
+The shift from the spatial domain to the frequency domain yielded significant performance improvements across six independent runs. 
 
 *(Note: Full classification reports and confusion matrices are available in the attached Capstone Project Report PDF).*
 
@@ -34,12 +34,12 @@ You can read the full methodology, detailed mathematical formulations, and view 
 
 | Model Architecture | Accuracy | AUC Score | Median Latency (per-frame) |
 | :--- | :--- | :--- | :--- |
-| Baseline 3D CNN | [cite_start]57% - 66% [cite: 6] | [cite_start]0.55 - 0.74 [cite: 6] | N/A |
-| FFT-based ResNet50 | [cite_start]72% - 76% [cite: 7] | [cite_start]0.82 - 0.85 [cite: 7] | N/A |
-| **Fine-Tuned FFT ResNet50** | [cite_start]**90% - 92%** [cite: 8] | [cite_start]**> 0.95** [cite: 8] | [cite_start]**~2.7 ms** [cite: 9] |
+| Baseline 3D CNN | 57% - 66%  | 0.55 - 0.74  | N/A |
+| FFT-based ResNet50 | 72% - 76%  | 0.82 - 0.85  | N/A |
+| **Fine-Tuned FFT ResNet50** | **90% - 92%**  | **> 0.95**  | **~2.7 ms**  |
 
 ## Dataset & Acknowledgements
-[cite_start]The video data used to train and evaluate these models is sourced from the **FaceForensics++** dataset[cite: 5, 149]. 
+The video data used to train and evaluate these models is sourced from the **FaceForensics++** dataset. 
 * Original Dataset Repository: [ondyari/FaceForensics](https://github.com/ondyari/FaceForensics)
 
 ## Repository Structure
