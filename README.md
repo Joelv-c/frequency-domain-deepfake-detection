@@ -52,7 +52,7 @@ The video data used to train and evaluate these models is sourced from the **Fac
 ├── requirements.txt                  # Python dependencies
 ├── assets/                           # Readme images and diagrams
 │   ├── pipeline.png
-│   ├── fft_spectra.png
+│   ├── spectra_comparison.png
 │   ├── performance_bars.png
 │   └── roc_curve.png
 └── videos/                           # Target directory for the dataset
