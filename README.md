@@ -1,5 +1,11 @@
 # Frequency-Domain Deepfake Video Detection
 
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![Type](https://img.shields.io/badge/Type-Master's_Capstone-blue)
+![Domain](https://img.shields.io/badge/Domain-Digital_Forensics-darkred)
+![Language](https://img.shields.io/badge/Language-Python-blueviolet)
+![Framework](https://img.shields.io/badge/Framework-PyTorch-EE4C2C)
+
 ## Overview
 This repository contains the code and research for a deepfake video detection pipeline explicitly optimized for low-latency forensic triage. 
 
